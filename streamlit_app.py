@@ -15,7 +15,7 @@ if st.button("✨ Generate Look"):
     if not openai_api_key:
         st.error("Please enter your OpenAI API key.")
     else:
-        openai.api_key = openai_api_key
+        client = OpenAI(api_key=openai_api_key)
         prompt = f"""
         You are a highly creative, emotionally intelligent AI Fashion stylist call Mood2Fit.
         Your job is to create a personalised outfit based on someone's vibe- mood, event or a song.
@@ -35,7 +35,7 @@ if st.button("✨ Generate Look"):
         Song: {song}
         """
         try:
-            response = openai.ChatCompletion.create(
+            response = client.chat.completions.create(
                 model = "gpt-4",
                 messages = [{"role": "user", "content": prompt}],
                 temperature = 0.8,
