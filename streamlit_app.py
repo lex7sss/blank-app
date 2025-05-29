@@ -16,7 +16,6 @@ if st.button("✨ Generate Look"):
     st.error("Please enter your OpenAI API key.")
   else:
     openai.api_key = openai_api_key
-    # AI prompt
     prompt = f"""
     You are a highly creative, emotionally intelligent AI Fashion stylist call Mood2Fit.
     Your job is to create a personalised outfit based on someone's vibe- mood, event or a song.
