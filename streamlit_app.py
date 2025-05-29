@@ -38,7 +38,7 @@ if st.button("✨ Generate Look"):
 try:
   response = openai.ChatCompletion.create(
     model = "gpt-4",
-    messages = [{"role",: "user", "content": prompt}],
+    messages = [{"role": "user", "content": prompt}],
     temperature = 0.8,
     max_tokens = 600
   )
